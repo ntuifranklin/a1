@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-12">
+                <h2>Welcome to A1!</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p>Here you can view the predictions of the buses in the area.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p>Enter the radius, latitude, longitude and the bus number to view the predictions.</p>
+            </div>  
+        </div>
+        <hr>
+    
+        <form action="/predictions" method="post">
+            <div class="form-group">
+                <label for="inputLongitude2">Radius</label>
+                <input type="number" class="form-control" id="inputLongitude2" placeholder="Radius" value="2">
+            </div>
+            <div class="form-group">
+                <label for="staticLatitude2">Latitude</label>
+                <input type="number" class="form-control" id="staticLatitude2" placeholder="38.69875" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="inputLongitude2">Longitude</label>
+                <input type="number" class="form-control" id="inputLongitude2" placeholder="32.45687" step="0.01">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Bus Number</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                <option>S2</option>
+                <option>S9</option>
+                <option>52</option>
+                <option>54</option>
+                <option>70</option>
+                <option>79</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-primary mb-2">View bus predictions</button>
+        </form>
+        
+    </div>
+{% endblock %}
